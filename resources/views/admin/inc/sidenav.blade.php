@@ -16,6 +16,12 @@
                     <li><a href="{{route('cats.create')}}">Create</a></li>
                   </ul>
                 </li>
+                <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Brand </a>
+                  <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                    <li><a href="{{route('brands.index')}}">Brands</a></li>
+                    <li><a href="{{route('brands.create')}}">Create</a></li>
+                  </ul>
+                </li>
         </ul><span class="heading">Extras</span>
         <ul class="list-unstyled">
           <li> <a href="#"> <i class="icon-settings"></i>Demo </a></li>

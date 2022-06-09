@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\BrandController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -38,4 +39,5 @@ Route::get('/master', function () {
 Route::middleware(['auth:sanctum'])->group(function(){
     //Category
     Route::resource('cats', CategoryController::class);
+    Route::resource('brands', BrandController::class);
 });
