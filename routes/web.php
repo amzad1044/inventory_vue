@@ -45,3 +45,5 @@ Route::middleware(['auth:sanctum'])->group(function(){
     Route::resource('sizes', SizeController::class);
     Route::resource('products', ProductController::class);
 });
+
+Route::get('/{any}', function() { return view('error.err'); })->where('any', '(.*)');

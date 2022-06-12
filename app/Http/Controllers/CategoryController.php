@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Database\Eloquent\RelationNotFoundException;
+
 class CategoryController extends Controller
 {
     /**
@@ -16,11 +19,17 @@ class CategoryController extends Controller
     {
         try{
             $cats = Category::orderBy('created_at','DESC')->get();
+            // For testing error handling $cats->load(['hello']);
             return view('admin.cats.index',compact('cats'));
         }
-        catch(\Exception $exception){
-            return view('err');
+        catch(RelationNotFoundException $exception){
+            return view('error.relationerror');
         }
+        catch(\Exception $exception){
+            //dd(get_class($exception));
+            return view('error.err');
+        }
+
 
     }
 
