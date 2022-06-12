@@ -22,6 +22,8 @@
                     <li><a href="{{route('brands.create')}}">Create</a></li>
                   </ul>
                 </li>
+                <li> <a href="{{route('sizes.index')}}"> <i class="icon-settings"></i>Size </a></li>
+                <li> <a href="{{route('products.index')}}"> <i class="icon-settings"></i>Products </a></li>
         </ul><span class="heading">Extras</span>
         <ul class="list-unstyled">
           <li> <a href="#"> <i class="icon-settings"></i>Demo </a></li>

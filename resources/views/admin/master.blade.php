@@ -32,7 +32,7 @@
       <!-- Sidebar Navigation-->
       @include('admin.inc.sidenav')
       <!-- Sidebar Navigation end-->
-      <div class="page-content">
+      <div class="page-content" id="app">
         @include('flash::message')
 
          @yield('body')
@@ -41,6 +41,8 @@
       </div>
     </div>
     <!-- JavaScript files-->
+    <script src="{{asset('js/app.js')}}"></script>
+
     <script src="{{asset('admin/vendor/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('admin/vendor/popper.js/umd/popper.min.js')}}"> </script>
     <script src="{{asset('admin/vendor/bootstrap/js/bootstrap.min.js')}}"></script>

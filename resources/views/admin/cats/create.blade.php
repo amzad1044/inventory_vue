@@ -18,25 +18,26 @@
           <div class="container-fluid">
             <div class="row">
             	<div class="col-lg-6">
-	                <div class="block">
-	                  <div class="title"><strong class="d-block">New Category</strong></div>
-	                  <div class="block-body">
-	                    <form action="{{route('cats.store')}}" method="post" >
-	                    	@csrf
-	                      <div class="form-group">
-	                        <label class="form-control-label">Name</label>
-	                        <input name="name" type="text" placeholder="Enter Category Name" class="form-control">
 
-	                        <span class="text-danger">{{$errors->has('name') ? $errors->first('name') : ' '}}</span>
-	                        
-	                      </div>
-	                      <div class="form-group">       
-	                        <button type="submit" class="btn btn-primary">Submit</button>  
-	                      </div>
-	                    </form>
-	                  </div>
-	                </div>
-                </div>
+	                <div class="block">
+	                    <div class="title"><strong class="d-block">New Category</strong></div>
+							<div class="block-body">
+								<form action="{{route('cats.store')}}" method="post" >
+									@csrf
+								<div class="form-group">
+									<label class="form-control-label">Name</label>
+									<input name="name" type="text" placeholder="Enter Category Name" class="form-control">
+
+									<span class="text-danger">{{$errors->has('name') ? $errors->first('name') : ' '}}</span>
+									
+								</div>
+								<div class="form-group">       
+									<button type="submit" class="btn btn-primary">Submit</button>  
+								</div>
+								</form>
+							</div>
+	                	</div>
+                	</div>
 
             </div>
           </div>

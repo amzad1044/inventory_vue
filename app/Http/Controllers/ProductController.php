@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Category;
+use App\Models\Product;
 
-class CategoryController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,14 +14,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        try{
-            $cats = Category::orderBy('created_at','DESC')->get();
-            return view('admin.cats.index',compact('cats'));
-        }
-        catch(\Exception $exception){
-            return view('err');
-        }
-
+        $products = Product::all();
+        return view('admin.products.index',compact('products'));
     }
 
     /**
@@ -31,7 +25,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.cats.create');
+        return view('admin.products.create');
     }
 
     /**
@@ -42,16 +36,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        // return $request->all();
-        $this->validate($request,[
-            'name' => 'required|min:2|max:50|unique:categories'
-        ]);
-        $cats = new Category();
-        $cats->name = $request->name;
-        $cats->save();
-
-        flash('Category created successfully')->success();
-        return back();
+        //
     }
 
     /**
@@ -73,8 +58,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $cat = Category::findOrFail($id);
-        return view('admin.cats.edit',compact('cat'));
+        //
     }
 
     /**
@@ -86,15 +70,7 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,[
-            'name' => 'required|min:2|max:50|unique:categories,name,'.$id
-        ]);
-        $cat = Category::findOrFail($id);
-        $cat->name = $request->name;
-        $cat->save();
-
-        flash('Category updated successfully')->success();
-        return redirect()->route('cats.index');
+        //
     }
 
     /**
@@ -105,9 +81,6 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        $cat = Category::findOrFail($id);
-        $cat->delete();
-        flash('Category deleted successfully')->success();
-        return redirect()->route('cats.index');
+        //
     }
 }
